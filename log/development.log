@@ -40,3 +40,75 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-02-01 19:18:52.852305"], ["updated_at", "2020-02-01 19:18:52.852305"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for ::1 at 2020-02-01 14:23:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 525ms (Views: 495.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 14:23:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tP7DFS3ZaiKRy710FG94Uapz6kUO4YKUVOpngcuPpPP2TWXOym7ib/ucTjLPkZWo7WpNuI9nGORTw+nIE2vA1Q==", "title"=>"hey", "description"=>"somtheng\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hey"], ["description", "somtheng\r\n"], ["created_at", "2020-02-01 19:23:41.282212"], ["updated_at", "2020-02-01 19:23:41.282212"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 105ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/posts" for ::1 at 2020-02-01 14:24:22 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 55.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 14:24:28 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 14:24:35 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4xk6rJkSbPWHVvGbgII4vmlj/vJeD36sVwER4qRH1Ryhqpx3fqXkuO0BAt1bfNVHLnpZD9+J5NxQKJ+rfKOxOg==", "title"=>"hey", "description"=>"yo", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hey"], ["description", "yo"], ["created_at", "2020-02-01 19:24:35.851416"], ["updated_at", "2020-02-01 19:24:35.851416"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 132ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-01 14:28:23 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-01 14:28:27 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7vnQNKo2e+LJQHvzYNyjKNr56SHs+GInoLpHLN5Ai6SsSnbvTYHzr6MXiLW7Ik7RneBO3G1++Fenk8llBqTvgg==", "title"=>"hey", "description"=>"sm", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hey"], ["description", "sm"], ["created_at", "2020-02-01 19:28:27.760050"], ["updated_at", "2020-02-01 19:28:27.760050"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 17ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/posts/5" for ::1 at 2020-02-01 14:28:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 89ms (Views: 71.8ms | ActiveRecord: 1.7ms)
+
+
